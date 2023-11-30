@@ -115,7 +115,10 @@ export default function CharactersPage() {
             const number = pathArray[pathArray.length - 2];
 
             return (
-              <div key={number} className="hover:transition hover:ease-in transition ease-in-out">
+              <div
+                key={number}
+                className="hover:transition hover:ease-in transition ease-in-out"
+              >
                 <Image
                   src={characterImageMapping[item.name]}
                   alt={item.name}
@@ -123,7 +126,7 @@ export default function CharactersPage() {
                   height={120}
                   className="mx-auto text-center -z-10 mt-[-2rem]"
                 />
-                <div  className="bg-[#1a1a1a]">
+                <div className="bg-[#1a1a1a]">
                   <div className="border-t mb-5"></div>
 
                   <div className="ml-5  pb-2">
