@@ -18,8 +18,8 @@ jobs:
         with:
           node-version: 18
 
-      - name: Ci
-        run: npm ci
+      - name: Install
+        run: npm install
         if: success()
 
       - name: Lint
