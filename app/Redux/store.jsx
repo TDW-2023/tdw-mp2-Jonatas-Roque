@@ -1,12 +1,11 @@
 "use client";
 
-import { configureStore, createSlice } from '@reduxjs/toolkit';
-import { charactersApi } from './charactersSlice';
-import {characterSlice} from './charactersSlice';
-import { setupListeners } from '@reduxjs/toolkit/query'
-import bountyReducer from './bountySlice';
-import { characterDetailApi } from './characterDetail';
-
+import { configureStore, createSlice } from "@reduxjs/toolkit";
+import { charactersApi } from "./charactersSlice";
+import { characterSlice } from "./charactersSlice";
+import { setupListeners } from "@reduxjs/toolkit/query";
+import bountyReducer from "./bountySlice";
+import { characterDetailApi } from "./characterDetail";
 
 export const store = configureStore({
   reducer: {
@@ -15,8 +14,7 @@ export const store = configureStore({
     bounty: bountyReducer,
   },
   middleware: (getDefaultMiddleware) =>
-  getDefaultMiddleware().concat(charactersApi.middleware),
+    getDefaultMiddleware().concat(charactersApi.middleware),
 });
 
-setupListeners(store.dispatch)
-
+setupListeners(store.dispatch);

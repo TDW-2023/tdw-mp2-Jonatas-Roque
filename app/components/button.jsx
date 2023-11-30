@@ -1,6 +1,5 @@
-
-import styled from 'styled-components';
-import Link from 'next/link';
+import styled from "styled-components";
+import Link from "next/link";
 
 export const StarWarsButton = styled.button`
   background-color: transparent;
@@ -11,7 +10,9 @@ export const StarWarsButton = styled.button`
   border: 2px solid #ffc107;
   width: 15%;
   cursor: pointer;
-  transition: background-color 0.3s, color 0.3s;
+  transition:
+    background-color 0.3s,
+    color 0.3s;
 
   &:hover {
     background-color: #ffc107;
@@ -24,9 +25,6 @@ export const StarWarsButton = styled.button`
   }
 `;
 
-
-
-
 const StyledLink = styled(Link)`
   color: #0070f3; /* Set your desired text color */
   text-decoration: none;
@@ -37,8 +35,6 @@ const StyledLink = styled(Link)`
     color: #004080; /* Set your desired hover color */
   }
 `;
-
-
 
 /* export const StyledLink = styled(Link)`
 background-color: transparent;

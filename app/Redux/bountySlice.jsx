@@ -1,11 +1,11 @@
-import { createSlice } from '@reduxjs/toolkit';
+import { createSlice } from "@reduxjs/toolkit";
 
 const bountySlice = createSlice({
-  name: 'bounty',
+  name: "bounty",
   initialState: [],
   reducers: {
     addBounty: (state, action) => {
-        return [...state, action.payload];
+      return [...state, action.payload];
     },
   },
 });
