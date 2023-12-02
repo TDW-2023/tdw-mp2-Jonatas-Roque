@@ -123,7 +123,7 @@ export default function CharactersPage() {
               <option value="Droid">Droid</option>
               <option value="Wookie">Wookie</option>
               <option value="Rodian">Rodian</option>
-              <option value="Yoda's Specie">Yoda's Specie</option>
+              <option value="Yoda's Specie">Yoda&apos;s Specie</option>
               <option value="Hutt">Hutt</option>
               <option value="Unknown">Unknown</option>
     
