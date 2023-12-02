@@ -8,10 +8,6 @@ import Teste from "../components/teste";
 
 export default function CharacterDetails() {
   return (
-    <Provider store={store}>
-      <ApiProvider api={characterDetailApi}>
         <Teste />
-      </ApiProvider>
-    </Provider>
   );
 }

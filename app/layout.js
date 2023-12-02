@@ -5,9 +5,7 @@ import "./globals.css";
 import Footer from "./components/footer";
 import Navbar from "./components/navbar";
 import { Provider } from "react-redux";
-import { ApiProvider } from "@reduxjs/toolkit/dist/query/react";
 import { store } from "./Redux/store";
-import { charactersApi } from "./Redux/charactersSlice";
 
 
 const inter = Inter({ subsets: ["latin"] });
@@ -17,20 +15,18 @@ const inter = Inter({ subsets: ["latin"] });
   description: "Star wars app",
 }; */
 
-/* document.title = "Star Wars App" */
+// document.title = "Star Wars App"
 
 export default function RootLayout({ children }) {
   return (
-<html lang="en">
-    <Provider store={store}>
-      <ApiProvider api={charactersApi}>    
-      <body className={inter.className}>
-        <Navbar />
-        {children}
-        <Footer />
-      </body>
-      </ApiProvider>
-    </Provider>
-    </html> 
+    <html lang="en">
+      <Provider store={store}>
+        <body className={inter.className}>
+          <Navbar />
+          {children}
+          <Footer />
+        </body>
+      </Provider>
+    </html>
   );
 }

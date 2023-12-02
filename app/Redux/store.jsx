@@ -1,20 +1,18 @@
-"use client";
-
-import { configureStore, createSlice } from "@reduxjs/toolkit";
-import { charactersApi } from "./charactersSlice";
-import { characterSlice } from "./charactersSlice";
-import { setupListeners } from "@reduxjs/toolkit/query";
+import { configureStore } from "@reduxjs/toolkit";
 import bountySlice from "./bountySlice";
+import { charactersApi } from "./charactersSlice";
+import { setupListeners } from "@reduxjs/toolkit/query";
 import { characterDetailApi } from "./characterDetail";
-
-
-
+ 
+ 
 export const store = configureStore({
   reducer: {
-    bounty: bountySlice, 
+    bounty: bountySlice,
+    [charactersApi.reducerPath]: charactersApi.reducer,
+    [characterDetailApi.reducerPath]: characterDetailApi.reducer,
   },
-  /* middleware: (getDefaultMiddleware) =>
-    getDefaultMiddleware().concat(charactersApi.middleware), */
+  middleware: (getDefaultMiddleware) =>
+    getDefaultMiddleware().concat(charactersApi.middleware, characterDetailApi.middleware)
 });
-/* 
-setupListeners(store.dispatch); */
+ 
+setupListeners(store.dispatch);

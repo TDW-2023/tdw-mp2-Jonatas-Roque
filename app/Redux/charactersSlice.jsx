@@ -1,7 +1,6 @@
-"use client";
-
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
 
+ 
 export const charactersApi = createApi({
   reducerPath: "charactersApi",
   baseQuery: fetchBaseQuery({ baseUrl: "https://swapi.py4e.com/api/people/" }),
@@ -11,5 +10,5 @@ export const charactersApi = createApi({
     }),
   }),
 });
-
+ 
 export const { useGetAllCharactersQuery } = charactersApi;

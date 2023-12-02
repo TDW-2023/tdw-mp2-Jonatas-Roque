@@ -121,16 +121,7 @@ export default function Navbar() {
           </button>
         </div>
 
-         {/* <ul id="bounties" className="text-xl">
-          {bountyData.map((bounty, index) => (
-            <li key={index} className="py-5 pl-10 border-t flex cursor-pointer justify-between items-center hover:transition transition ease-in-out hover:ease-in-out hover:bg-yellow-600">
-              <div>{bounty.name}</div>
-              <div className="pr-8">
-                <BsChevronRight className="font-black text-[1.5rem]" />
-              </div>
-            </li>
-          ))}
-        </ul> */}
+         <BountyList/>
         
       </div>
     </nav>

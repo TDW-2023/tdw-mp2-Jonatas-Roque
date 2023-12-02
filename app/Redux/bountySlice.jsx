@@ -9,7 +9,7 @@ const bountySlice = createSlice({
   reducers: {
     addBounty: (state, action) => {
       console.log('Action Payload:', action.payload);
-      state.characters.push(action.payload);
+      state.characters.push({name: action.payload.name, id:action.payload.id});
       console.log('Updated State:', state);
     },
   },

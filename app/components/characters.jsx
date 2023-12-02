@@ -9,6 +9,7 @@ import { StarWarsButton } from "./button";
 import { parse } from "url";
 import { addBounty } from "../Redux/bountySlice";
 
+
 export default function CharactersPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedGender, setSelectedGender] = useState("");
@@ -41,7 +42,7 @@ export default function CharactersPage() {
     "https://swapi.py4e.com/api/species/5/": "Hutt",
     "https://swapi.py4e.com/api/species/6/": "Yoda's Specie",
     "": "Unknown"
-    
+
 
   };
 
@@ -67,20 +68,20 @@ export default function CharactersPage() {
     "Obi-Wan Kenobi": "/imgs/obi.png",
     "Anakin Skywalker": "/imgs/anakin.png",
     "Wilhuff Tarkin": "/imgs/tarkin.png",
-    "Chewbacca":"/imgs/chewbacca.png",
+    "Chewbacca": "/imgs/chewbacca.png",
     "Han Solo": "/imgs/hansolo.png",
     "Greedo": "/imgs/greedo.png",
     "Jabba Desilijic Tiure": "/imgs/jabba.png",
     "Wedge Antilles": "/imgs/wedge.png",
     "Jek Tono Porkins": "/imgs/porkins.png",
     "Yoda": "/imgs/yoda.png",
-    "Palpatine":"/imgs/palpatine.png"
-    
+    "Palpatine": "/imgs/palpatine.png"
+
   };
 
 
   const handleBounty = (item, number) => {
-    dispatch(addBounty(item))
+    dispatch(addBounty({name: item, id:number}))
     console.log(item)
   };
 
@@ -126,7 +127,7 @@ export default function CharactersPage() {
               <option value="Yoda's Specie">Yoda&apos;s Specie</option>
               <option value="Hutt">Hutt</option>
               <option value="Unknown">Unknown</option>
-    
+
             </select>
           </div>
         </div>
@@ -143,44 +144,46 @@ export default function CharactersPage() {
             const number = pathArray[pathArray.length - 2];
 
             return (
-              <div
-                key={number}
-                className="hover:transition hover:ease-in transition ease-in-out"
-              >
-                <Image
-                  src={characterImageMapping[item.name]}
-                  alt={item.name}
-                  width={120}
-                  height={120}
-                  className="mx-auto text-center -z-10 mt-[-2rem]"
-                />
-                <div className="bg-[#1a1a1a]">
-                  <div className="border-t mb-5"></div>
 
-                  <div className="ml-5  pb-2">
-                    <div className="mb-3 font-bold">{item.name}</div>
-                    <div className="mb-3">
-                      Specie: {speciesMapping[item.species]}
-                    </div>
-                    <div className="mb-3">Gender: {item.gender}</div>
-                  </div>
+                <div
+                  key={number}
+                  className="hover:transition hover:ease-in transition ease-in-out"
+                >
+                  <Image
+                    src={characterImageMapping[item.name]}
+                    alt={item.name}
+                    width={120}
+                    height={120}
+                    className="mx-auto text-center -z-10 mt-[-2rem]"
+                  />
+                  <div className="bg-[#1a1a1a]">
+                    <div className="border-t mb-5"></div>
 
-                  <div className="grid grid-cols-2">
-                    <Link href={`/characterDetails/?id=${number}`}>
-                      <div className="w-50 bg-transparent cursor-pointer border-[#ffc107] text-center py-2 text-[#ffc107] hover:bg-[#ffc107] hover:text-black border hover:transition hover:ease-in-out transition ease-in">
-                        About
+                    <div className="ml-5  pb-2">
+                      <div className="mb-3 font-bold">{item.name}</div>
+                      <div className="mb-3">
+                        Specie: {speciesMapping[item.species]}
                       </div>
-                    </Link>
-                    <div id="addBounty">
-                      {/* criar slicer para bounty, pegar no index/id e fazer consumo da data na navbar, tendo que envolver noutro provider e apiprovider (eventualmente guardar localmente) */}
-                      <div className="w-50 bg-transparent border-white text-center py-2 text-white hover:border hover:bg-white hover:text-black border hover:transition hover:ease-in-out transition ease-in cursor-pointer" 
-                      onClick={()=>handleBounty(item.name, number)}>
-                        Add Bounty
+                      <div className="mb-3">Gender: {item.gender}</div>
+                    </div>
+
+                    <div className="grid grid-cols-2">
+                      <Link href={`/characterDetails/?id=${number}`}>
+                        <div className="w-50 bg-transparent cursor-pointer border-[#ffc107] text-center py-2 text-[#ffc107] hover:bg-[#ffc107] hover:text-black border hover:transition hover:ease-in-out transition ease-in">
+                          About
+                        </div>
+                      </Link>
+                      <div id="addBounty">
+                        {/* criar slicer para bounty, pegar no index/id e fazer consumo da data na navbar, tendo que envolver noutro provider e apiprovider (eventualmente guardar localmente) */}
+                        <div className="w-50 bg-transparent border-white text-center py-2 text-white hover:border hover:bg-white hover:text-black border hover:transition hover:ease-in-out transition ease-in cursor-pointer"
+                          onClick={() => handleBounty(item.name, number)}>
+                          Add Bounty
+                        </div>
                       </div>
                     </div>
                   </div>
                 </div>
-              </div>
+            
             );
           })
         ) : (
