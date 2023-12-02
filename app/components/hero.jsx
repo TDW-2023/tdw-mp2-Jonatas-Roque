@@ -5,13 +5,13 @@ import Link from "next/link";
 
 export default function Hero() {
 
-document.title="Star Wars App"
+//document.title="Star Wars App"
 
   return (
-    <main className="-z-10">
+    <main className="-z-10 h-[89vh] my-auto">
       <section
-        className="text-center text-[3rem] pt-[30vh] w-[900px] mx-auto font-extrabold"
-        style={{ transform: "scaleX(-1)" }}
+        className="text-center pt-[25vh] text-[3rem] w-[900px] mx-auto font-extrabold"
+        /* style={{ transform: "scaleX(-1)" }} */
       >
         Explore here your favorite{" "}
         <span className="text-[#ffc107] stroke-black">Star Wars</span>{" "}
@@ -20,7 +20,7 @@ document.title="Star Wars App"
 
       <div
         className="flex justify-center mt-10"
-        style={{ transform: "scaleX(-1)" }}
+        /* style={{ transform: "scaleX(-1)" }} */
       >
         <StarWarsButton>
           <Link href={"/characters"}>
