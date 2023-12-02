@@ -11,7 +11,7 @@ import CharactersPage from "../components/characters";
 
 export default function Characters() {
 
-  document.title = "Characters"
+ /*  document.title = "Characters" */
   
   return (
     <>

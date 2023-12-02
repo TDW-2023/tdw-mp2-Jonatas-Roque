@@ -105,7 +105,7 @@ export default function Teste() {
 
   };
 
-  document.title = character.name
+  /* document.title = character.name */
 
   return (
     <div className="text-4xl mx-auto text-center pt-[15vh] h-[50vh]">

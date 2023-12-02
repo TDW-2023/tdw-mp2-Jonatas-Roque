@@ -17,7 +17,7 @@ const inter = Inter({ subsets: ["latin"] });
   description: "Star wars app",
 }; */
 
-document.title = "Star Wars App"
+/* document.title = "Star Wars App" */
 
 export default function RootLayout({ children }) {
   return (
