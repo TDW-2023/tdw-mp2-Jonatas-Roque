@@ -1,0 +1,39 @@
+name: Teste de ci/cd
+
+on:
+  push:
+    branches:
+      - dev
+
+jobs:
+  Explore-GitHub-Actions:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v2
+
+      - name: Set up Node.js
+        uses: actions/setup-node@v2
+        with:
+          node-version: 18
+
+      - name: Install
+        run: npm install
+        if: success()
+
+      - name: Lint
+        run: npm run lint
+        if: success()
+
+      - name: Format
+        run: npm run format
+        if: success()
+
+      - name: Build
+        run: npm run build
+        if: success()
+
+          
+
+      
