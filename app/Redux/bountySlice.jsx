@@ -1,11 +1,16 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const bountySlice = createSlice({
-  name: "bounty",
-  initialState: [],
+  name: 'bounty',
+  initialState: {
+    characters:[]
+  }
+  ,
   reducers: {
     addBounty: (state, action) => {
-      return [...state, action.payload];
+      console.log('Action Payload:', action.payload);
+      state.characters.push(action.payload);
+      console.log('Updated State:', state);
     },
   },
 });

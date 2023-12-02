@@ -19,6 +19,7 @@ export default function Teste() {
     isLoading,
   } = useGetSpecificCharacterQuery(id);
   const showPrevCharacterButton = parseInt(id) > 1;
+  const dontShowNextCharacterButton = parseInt(id) < 21;
 
   if (isLoading) {
     return (
@@ -39,13 +40,16 @@ export default function Teste() {
               <BsArrowLeftShort /> <div>Prev Character</div>
             </Link>
           )}
-          <Link
+          {dontShowNextCharacterButton && (
+            <Link
             href={`/characterDetails?id=${parseInt(id) + 1}`}
             className="mx-2 flex items-center transition ease-in-out hover:transition hover:ease-in hover:opacity-60"
           >
             <div>Next Character </div>
             <BsArrowRightShort />
           </Link>
+          )}
+          
         </div>
       </div>
     );
@@ -54,6 +58,12 @@ export default function Teste() {
   const speciesMapping = {
     "https://swapi.py4e.com/api/species/1/": "Human",
     "https://swapi.py4e.com/api/species/2/": "Droid",
+    "https://swapi.py4e.com/api/species/3/": "Wookie",
+    "https://swapi.py4e.com/api/species/4/": "Rodian",
+    "https://swapi.py4e.com/api/species/5/": "Hutt",
+    "https://swapi.py4e.com/api/species/6/": "Yoda's Specie",
+    
+
   };
 
   const characterImageMapping = {
@@ -67,6 +77,17 @@ export default function Teste() {
     "R5-D4": "/imgs/r5.png",
     "Biggs Darklighter": "/imgs/biggs.png",
     "Obi-Wan Kenobi": "/imgs/obi.png",
+    "Anakin Skywalker": "/imgs/anakin.png",
+    "Wilhuff Tarkin": "/imgs/tarkin.png",
+    "Chewbacca":"/imgs/chewbacca.png",
+    "Han Solo": "/imgs/hansolo.png",
+    "Greedo": "/imgs/greedo.png",
+    "Jabba Desilijic Tiure": "/imgs/jabba.png",
+    "Wedge Antilles": "/imgs/wedge.png",
+    "Jek Tono Porkins": "/imgs/porkins.png",
+    "Yoda": "/imgs/yoda.png",
+    "Palpatine":"/imgs/palpatine.png"
+    
   };
 
   const planetMapping = {
@@ -74,7 +95,17 @@ export default function Teste() {
     "https://swapi.py4e.com/api/planets/2/": "Alderaan",
     "https://swapi.py4e.com/api/planets/8/": "Naboo",
     "https://swapi.py4e.com/api/planets/20/": "Stewjon",
+    "https://swapi.py4e.com/api/planets/14/": "Kashyyyk",
+    "https://swapi.py4e.com/api/planets/21/": "Eriadu",
+    "https://swapi.py4e.com/api/planets/22/": "Corellia",
+    "https://swapi.py4e.com/api/planets/23/": "Rodia",
+    "https://swapi.py4e.com/api/planets/24/": "Nal Hutta",
+    "https://swapi.py4e.com/api/planets/26/": "Bestine IV",
+    "https://swapi.py4e.com/api/planets/28/": "Unknown",
+
   };
+
+  document.title = character.name
 
   return (
     <div className="text-4xl mx-auto text-center pt-[15vh] h-[50vh]">
@@ -114,13 +145,15 @@ export default function Teste() {
             <BsArrowLeftShort /> <div>Prev Character</div>
           </Link>
         )}
-        <Link
-          href={`/characterDetails?id=${parseInt(id) + 1}`}
-          className="mx-2 flex items-center transition ease-in-out hover:transition hover:ease-in hover:opacity-60"
-        >
-          <div>Next Character </div>
-          <BsArrowRightShort />
-        </Link>
+        {dontShowNextCharacterButton && (
+            <Link
+            href={`/characterDetails?id=${parseInt(id) + 1}`}
+            className="mx-2 flex items-center transition ease-in-out hover:transition hover:ease-in hover:opacity-60"
+          >
+            <div>Next Character </div>
+            <BsArrowRightShort />
+          </Link>
+          )}
       </div>
     </div>
   );

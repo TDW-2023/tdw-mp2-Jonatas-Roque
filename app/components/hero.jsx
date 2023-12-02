@@ -4,6 +4,9 @@ import { StarWarsButton } from "./button";
 import Link from "next/link";
 
 export default function Hero() {
+
+document.title="Star Wars App"
+
   return (
     <main className="-z-10">
       <section

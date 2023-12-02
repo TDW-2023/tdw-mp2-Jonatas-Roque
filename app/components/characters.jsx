@@ -7,15 +7,17 @@ import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
 import { StarWarsButton } from "./button";
 import { parse } from "url";
+import { addBounty } from "../Redux/bountySlice";
 
 export default function CharactersPage() {
   const [searchQuery, setSearchQuery] = useState("");
   const [selectedGender, setSelectedGender] = useState("");
   const [selectedSpecies, setSelectedSpecies] = useState("");
-  const [id, setId] = useState();
+  const dispatch = useDispatch();
   const [page, setPage] = useState(1);
 
   const { data: characters, error, isLoading } = useGetAllCharactersQuery(page);
+
 
   if (isLoading) {
     return (
@@ -34,6 +36,13 @@ export default function CharactersPage() {
   const speciesMapping = {
     "https://swapi.py4e.com/api/species/1/": "Human",
     "https://swapi.py4e.com/api/species/2/": "Droid",
+    "https://swapi.py4e.com/api/species/3/": "Wookie",
+    "https://swapi.py4e.com/api/species/4/": "Rodian",
+    "https://swapi.py4e.com/api/species/5/": "Hutt",
+    "https://swapi.py4e.com/api/species/6/": "Yoda's Specie",
+    "": "Unknown"
+    
+
   };
 
   const filteredCharacters = characters.results.filter(
@@ -56,12 +65,25 @@ export default function CharactersPage() {
     "R5-D4": "/imgs/r5.png",
     "Biggs Darklighter": "/imgs/biggs.png",
     "Obi-Wan Kenobi": "/imgs/obi.png",
+    "Anakin Skywalker": "/imgs/anakin.png",
+    "Wilhuff Tarkin": "/imgs/tarkin.png",
+    "Chewbacca":"/imgs/chewbacca.png",
+    "Han Solo": "/imgs/hansolo.png",
+    "Greedo": "/imgs/greedo.png",
+    "Jabba Desilijic Tiure": "/imgs/jabba.png",
+    "Wedge Antilles": "/imgs/wedge.png",
+    "Jek Tono Porkins": "/imgs/porkins.png",
+    "Yoda": "/imgs/yoda.png",
+    "Palpatine":"/imgs/palpatine.png"
+    
   };
 
-  const handleMoreCharacters = () => {
-    /* necessita de fazer um novo pedido à bd para a ?page=2 e meter no seguimento dos characters, talvez como componente
-    console.log("more") */
+
+  const handleBounty = (item, number) => {
+    dispatch(addBounty(item))
+    console.log(item)
   };
+
 
   return (
     <>
@@ -85,7 +107,7 @@ export default function CharactersPage() {
               onChange={(e) => setSelectedGender(e.target.value)}
               value={selectedGender}
             >
-              <option defaultValue={""}>Gender</option>
+              <option value="" defaultValue={""}>Gender</option>
               <option value="male">Male</option>
               <option value="female">Female</option>
               <option value="n/a">N/A</option>
@@ -96,9 +118,15 @@ export default function CharactersPage() {
               onChange={(e) => setSelectedSpecies(e.target.value)}
               value={selectedSpecies}
             >
-              <option defaultValue={""}>Species</option>
+              <option value="" defaultValue={""}>Species</option>
               <option value="Human">Human</option>
               <option value="Droid">Droid</option>
+              <option value="Wookie">Wookie</option>
+              <option value="Rodian">Rodian</option>
+              <option value="Yoda's Specie">Yoda's Specie</option>
+              <option value="Hutt">Hutt</option>
+              <option value="Unknown">Unknown</option>
+    
             </select>
           </div>
         </div>
@@ -140,15 +168,16 @@ export default function CharactersPage() {
                   <div className="grid grid-cols-2">
                     <Link href={`/characterDetails/?id=${number}`}>
                       <div className="w-50 bg-transparent cursor-pointer border-[#ffc107] text-center py-2 text-[#ffc107] hover:bg-[#ffc107] hover:text-black border hover:transition hover:ease-in-out transition ease-in">
-                        About{/*lINK*/}
+                        About
                       </div>
                     </Link>
-                    <Link href={`/characterDetails/?id=${index + 1}`}>
+                    <div id="addBounty">
                       {/* criar slicer para bounty, pegar no index/id e fazer consumo da data na navbar, tendo que envolver noutro provider e apiprovider (eventualmente guardar localmente) */}
-                      <div className="w-50 bg-transparent border-white text-center py-2 text-white hover:border hover:bg-white hover:text-black border hover:transition hover:ease-in-out transition ease-in cursor-pointer">
+                      <div className="w-50 bg-transparent border-white text-center py-2 text-white hover:border hover:bg-white hover:text-black border hover:transition hover:ease-in-out transition ease-in cursor-pointer" 
+                      onClick={()=>handleBounty(item.name, number)}>
                         Add Bounty
                       </div>
-                    </Link>
+                    </div>
                   </div>
                 </div>
               </div>

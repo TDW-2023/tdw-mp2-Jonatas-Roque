@@ -9,6 +9,7 @@ import { TfiClose } from "react-icons/tfi";
 import { TfiBookmark } from "react-icons/tfi";
 import { BsChevronRight } from "react-icons/bs";
 import { useSelector } from "react-redux";
+import BountyList from "./bountyList";
 
 export default function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -21,6 +22,8 @@ export default function Navbar() {
   const toggleFavs = () => {
     setFavOpen(!favOpen);
   };
+
+  /* const bountyData = useSelector((state) => state.bounty) */
 
   return (
     <nav className="bg-transparent top-0 z-50">
@@ -104,11 +107,6 @@ export default function Navbar() {
           </li>
         </ul>
 
-        {/* <div className="border-t mx-5 border-slate-400 mt-5"></div>
-
-            <ul className="p-4 ml-4">
-                <li>About Us</li>
-            </ul> */}
       </div>
 
       <div
@@ -123,13 +121,17 @@ export default function Navbar() {
           </button>
         </div>
 
-        <ul className="mx-16">
-          <li>x</li>
-          <li>x</li>
-          {/* {bountyList.map((bounty) => (
-            <li key={bounty.id}>{bounty.name}</li>
-          ))} */}
-        </ul>
+         {/* <ul id="bounties" className="text-xl">
+          {bountyData.map((bounty, index) => (
+            <li key={index} className="py-5 pl-10 border-t flex cursor-pointer justify-between items-center hover:transition transition ease-in-out hover:ease-in-out hover:bg-yellow-600">
+              <div>{bounty.name}</div>
+              <div className="pr-8">
+                <BsChevronRight className="font-black text-[1.5rem]" />
+              </div>
+            </li>
+          ))}
+        </ul> */}
+        
       </div>
     </nav>
   );

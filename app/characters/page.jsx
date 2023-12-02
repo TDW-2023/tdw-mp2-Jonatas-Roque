@@ -7,14 +7,19 @@ import { charactersApi } from "../Redux/charactersSlice";
 import { ApiProvider } from "@reduxjs/toolkit/query/react";
 import CharactersPage from "../components/characters";
 
+
+
 export default function Characters() {
+
+  document.title = "Characters"
+  
   return (
     <>
-      <Provider store={store}>
-        <ApiProvider api={charactersApi}>
+      {/* <Provider store={store}> */}
+        {/* <ApiProvider api={charactersApi}> */}
           <CharactersPage />
-        </ApiProvider>
-      </Provider>
+        {/* </ApiProvider> */}
+      {/* </Provider> */}
     </>
   );
 }
