@@ -1,3 +1,5 @@
+"use client";
+
 export default function Planets(){
     if (typeof document !== 'undefined') {
         document.title = 'Planets';
