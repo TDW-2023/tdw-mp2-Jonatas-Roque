@@ -109,7 +109,7 @@ export default function SpecificCharacterDetails() {
     "https://swapi.py4e.com/api/planets/28/": "Unknown",
   };
 
-  //document.title = character.name
+  document.title = character.name
 
   return (
     <div className="text-4xl mx-auto text-center py-[20vh]">

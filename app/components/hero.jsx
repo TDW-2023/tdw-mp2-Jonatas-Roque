@@ -4,7 +4,8 @@ import { StarWarsButton } from "./button";
 import Link from "next/link";
 
 export default function Hero() {
-  //document.title="Star Wars App"
+
+  document.title = 'Star Wars app';
 
   return (
     <main className="-z-10 h-[89vh] my-auto">
