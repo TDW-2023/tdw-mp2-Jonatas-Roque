@@ -12,10 +12,9 @@ import { addBounty } from "../Redux/bountySlice";
 // verificar se o personagem está na store
 export function useCharacterInBountyList(number) {
   return useSelector((state) =>
-    state.bounty.characters.some((bounty) => bounty.id === number)
+    state.bounty.characters.some((bounty) => bounty.id === number),
   );
 }
-
 
 const speciesMapping = {
   "https://swapi.py4e.com/api/species/1/": "Human",
@@ -26,7 +25,6 @@ const speciesMapping = {
   "https://swapi.py4e.com/api/species/6/": "Yoda's Specie",
   "": "Unknown",
 };
-
 
 export default function CharactersPage() {
   const [searchQuery, setSearchQuery] = useState("");
@@ -48,8 +46,6 @@ export default function CharactersPage() {
       dispatch(addBounty({ name: item, id: number }));
     };
 
-    
-
     const characterImageMapping = {
       "Luke Skywalker": "/imgs/luke_2.png",
       "Darth Vader": "/imgs/darth.png",
@@ -63,17 +59,15 @@ export default function CharactersPage() {
       "Obi-Wan Kenobi": "/imgs/obi.png",
       "Anakin Skywalker": "/imgs/anakin.png",
       "Wilhuff Tarkin": "/imgs/tarkin.png",
-      "Chewbacca":"/imgs/chewbacca.png",
+      Chewbacca: "/imgs/chewbacca.png",
       "Han Solo": "/imgs/hansolo.png",
-      "Greedo": "/imgs/greedo.png",
+      Greedo: "/imgs/greedo.png",
       "Jabba Desilijic Tiure": "/imgs/jabba.png",
       "Wedge Antilles": "/imgs/wedge.png",
       "Jek Tono Porkins": "/imgs/porkins.png",
-      "Yoda": "/imgs/yoda.png",
-      "Palpatine":"/imgs/palpatine.png"
-      
+      Yoda: "/imgs/yoda.png",
+      Palpatine: "/imgs/palpatine.png",
     };
-
 
     return (
       <div
@@ -143,7 +137,7 @@ export default function CharactersPage() {
       (selectedGender === "" ||
         item.gender.toLowerCase() === selectedGender.toLowerCase()) &&
       (selectedSpecies === "" ||
-        speciesMapping[item.species] === selectedSpecies)
+        speciesMapping[item.species] === selectedSpecies),
   );
 
   return (
@@ -200,7 +194,6 @@ export default function CharactersPage() {
       <div className="mt-[10vh] grid grid-cols-5 gap-14 w-3/4 mx-auto">
         {filteredCharacters.length > 0 ? (
           filteredCharacters.map((item, index) => {
-
             // URL parse
             const parsedUrl = parse(item.url, true);
 

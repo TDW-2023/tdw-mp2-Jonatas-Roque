@@ -1,6 +1,5 @@
- 
 import { createApi, fetchBaseQuery } from "@reduxjs/toolkit/query/react";
- 
+
 export const characterDetailApi = createApi({
   reducerPath: "characterDetailApi",
   baseQuery: fetchBaseQuery({ baseUrl: "https://swapi.py4e.com/api/" }),
@@ -10,5 +9,5 @@ export const characterDetailApi = createApi({
     }),
   }),
 });
- 
+
 export const { useGetSpecificCharacterQuery } = characterDetailApi;

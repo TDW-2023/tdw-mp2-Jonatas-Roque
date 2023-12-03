@@ -106,7 +106,6 @@ export default function Navbar() {
             </div>
           </li>
         </ul>
-
       </div>
 
       <div
@@ -115,14 +114,15 @@ export default function Navbar() {
         } bg-[#111111] z-50 text-white h-screen w-[30rem] fixed top-0 right-0 transition-transform duration-300 ease-in-out`}
       >
         <div className="flex justify-between pr-7 mt-5 items-center border-b border-white">
-          <h3 className="text-2xl font-semibold mb-4 mt-1 ml-10 ">Bounty List</h3>
+          <h3 className="text-2xl font-semibold mb-4 mt-1 ml-10 ">
+            Bounty List
+          </h3>
           <button className="pb-3 px-2 rounded-full" onClick={toggleFavs}>
             <TfiClose className="hover:scale-150 hover:transition hover:ease-out ease-in-out transition" />
           </button>
         </div>
 
-         <BountyList/>
-        
+        <BountyList />
       </div>
     </nav>
   );

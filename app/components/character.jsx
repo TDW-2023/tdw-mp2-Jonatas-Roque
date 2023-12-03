@@ -23,11 +23,10 @@ export default function SpecificCharacterDetails() {
   } = useGetSpecificCharacterQuery(id);
   const showPrevCharacterButton = parseInt(id) > 1;
   const dontShowNextCharacterButton = parseInt(id) < 21;
- const isCharacterInBountyList = useSelector((state) =>
-    state.bounty.characters.some((bounty) => bounty.id === id)
+  const isCharacterInBountyList = useSelector((state) =>
+    state.bounty.characters.some((bounty) => bounty.id === id),
   );
 
-  
   if (isLoading) {
     return (
       <div className="mx-auto text-center pt-[30vh] h-[50vh]">Loading...</div>
@@ -49,16 +48,17 @@ export default function SpecificCharacterDetails() {
           )}
           {dontShowNextCharacterButton && (
             <Link
-            href={`/characterDetails?id=${parseInt(id) + 1}`}
-            className="mx-2 flex items-center transition ease-in-out hover:transition hover:ease-in hover:opacity-60"
-          >
-            <div>Next Character </div>
-            <BsArrowRightShort />
-          </Link>
+              href={`/characterDetails?id=${parseInt(id) + 1}`}
+              className="mx-2 flex items-center transition ease-in-out hover:transition hover:ease-in hover:opacity-60"
+            >
+              <div>Next Character </div>
+              <BsArrowRightShort />
+            </Link>
           )}
-          
         </div>
-        <StarWarsButton className="mt-5"><div className="mx-auto text-center">Return to Characters</div></StarWarsButton>
+        <StarWarsButton className="mt-5">
+          <div className="mx-auto text-center">Return to Characters</div>
+        </StarWarsButton>
       </div>
     );
   }
@@ -70,8 +70,6 @@ export default function SpecificCharacterDetails() {
     "https://swapi.py4e.com/api/species/4/": "Rodian",
     "https://swapi.py4e.com/api/species/5/": "Hutt",
     "https://swapi.py4e.com/api/species/6/": "Yoda's Specie",
-    
-
   };
 
   const characterImageMapping = {
@@ -87,15 +85,14 @@ export default function SpecificCharacterDetails() {
     "Obi-Wan Kenobi": "/imgs/obi.png",
     "Anakin Skywalker": "/imgs/anakin.png",
     "Wilhuff Tarkin": "/imgs/tarkin.png",
-    "Chewbacca":"/imgs/chewbacca.png",
+    Chewbacca: "/imgs/chewbacca.png",
     "Han Solo": "/imgs/hansolo.png",
-    "Greedo": "/imgs/greedo.png",
+    Greedo: "/imgs/greedo.png",
     "Jabba Desilijic Tiure": "/imgs/jabba.png",
     "Wedge Antilles": "/imgs/wedge.png",
     "Jek Tono Porkins": "/imgs/porkins.png",
-    "Yoda": "/imgs/yoda.png",
-    "Palpatine":"/imgs/palpatine.png"
-    
+    Yoda: "/imgs/yoda.png",
+    Palpatine: "/imgs/palpatine.png",
   };
 
   const planetMapping = {
@@ -110,7 +107,6 @@ export default function SpecificCharacterDetails() {
     "https://swapi.py4e.com/api/planets/24/": "Nal Hutta",
     "https://swapi.py4e.com/api/planets/26/": "Bestine IV",
     "https://swapi.py4e.com/api/planets/28/": "Unknown",
-
   };
 
   //document.title = character.name
@@ -142,7 +138,6 @@ export default function SpecificCharacterDetails() {
             Birth Year: {character.birth_year}
           </div>
         </div>
-        
       </div>
       {isCharacterInBountyList ? (
         <div className="text-lg bg-[#161616ee] border border-white text-white w-[30%] mx-auto py-3">
@@ -166,16 +161,20 @@ export default function SpecificCharacterDetails() {
           </Link>
         )}
         {dontShowNextCharacterButton && (
-            <Link
+          <Link
             href={`/characterDetails?id=${parseInt(id) + 1}`}
             className="mx-2 flex items-center transition ease-in-out hover:transition hover:ease-in hover:opacity-60"
           >
             <div>Next Character </div>
             <BsArrowRightShort />
           </Link>
-          )}
+        )}
       </div>
-      <Link href={"/characters"}><StarWarsButton className="mt-10"><div className="tmx-auto text-center">Return to Characters</div></StarWarsButton></Link>
+      <Link href={"/characters"}>
+        <StarWarsButton className="mt-10">
+          <div className="tmx-auto text-center">Return to Characters</div>
+        </StarWarsButton>
+      </Link>
     </div>
   );
 }

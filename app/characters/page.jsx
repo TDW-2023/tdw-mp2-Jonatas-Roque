@@ -3,10 +3,9 @@
 import CharactersPage from "../components/characters";
 
 export default function Characters() {
-
   return (
     <>
-          <CharactersPage />
+      <CharactersPage />
     </>
   );
 }

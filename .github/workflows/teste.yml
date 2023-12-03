@@ -3,6 +3,7 @@ name: Teste de ci/cd
 on:
   push:
     branches:
+      - main
       - dev
 
 jobs:
@@ -33,7 +34,3 @@ jobs:
       - name: Build
         run: npm run build
         if: success()
-
-          
-
-      
