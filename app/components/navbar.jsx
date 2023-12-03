@@ -2,7 +2,7 @@
 
 import Image from "next/image";
 import Link from "next/link";
-import logo from "../../public/imgs/swlogo.png";
+import logo from "../../public/imgs/swlogo.webp";
 import { useState, useEffect } from "react";
 import { TfiAlignJustify } from "react-icons/tfi";
 import { TfiClose } from "react-icons/tfi";
