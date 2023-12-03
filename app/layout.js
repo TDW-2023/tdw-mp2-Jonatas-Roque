@@ -14,8 +14,7 @@ const inter = Inter({ subsets: ["latin"] });
   description: "Star wars app",
 }; */
 
-
-if (typeof document !== 'undefined') {
+if (typeof document !== "undefined") {
   document.title = "Star Wars App";
 }
 
