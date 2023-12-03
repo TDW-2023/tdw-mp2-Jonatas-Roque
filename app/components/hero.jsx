@@ -4,10 +4,8 @@ import { StarWarsButton } from "./button";
 import Link from "next/link";
 
 export default function Hero() {
-
-
-  if (typeof document !== 'undefined') {
-    document.title = 'Star Wars app';
+  if (typeof document !== "undefined") {
+    document.title = "Star Wars app";
   }
 
   return (

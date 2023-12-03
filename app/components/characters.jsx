@@ -33,8 +33,7 @@ export default function CharactersPage() {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
 
-  
-  if (typeof document !== 'undefined') {
+  if (typeof document !== "undefined") {
     document.title = "Characters";
   }
 
@@ -62,14 +61,14 @@ export default function CharactersPage() {
       "Obi-Wan Kenobi": "/imgs/obi.webp",
       "Anakin Skywalker": "/imgs/anakin.webp",
       "Wilhuff Tarkin": "/imgs/tarkin.webp",
-      "Chewbacca": "/imgs/chewbacca.webp",
+      Chewbacca: "/imgs/chewbacca.webp",
       "Han Solo": "/imgs/hansolo.webp",
-      "Greedo": "/imgs/greedo.webp",
+      Greedo: "/imgs/greedo.webp",
       "Jabba Desilijic Tiure": "/imgs/jabba.webp",
       "Wedge Antilles": "/imgs/wedge.webp",
       "Jek Tono Porkins": "/imgs/porkins.webp",
-      "Yoda": "/imgs/yoda.webp",
-      "Palpatine": "/imgs/palpatine.webp",
+      Yoda: "/imgs/yoda.webp",
+      Palpatine: "/imgs/palpatine.webp",
     };
 
     return (
