@@ -105,6 +105,12 @@ export default function Navbar() {
               <BsChevronRight className="font-black text-[1.5rem]" />
             </div>
           </li>
+          <Link href={"/about"} className="py-5 pl-10 border-b border-t flex cursor-pointer justify-between items-center hover:transition transition ease-in-out hover:ease-in-out hover:bg-yellow-600">
+            <div>About Project</div>
+            <div className="pr-8">
+              <BsChevronRight className="font-black text-[1.5rem]" />
+            </div>
+          </Link>
         </ul>
       </div>
 
