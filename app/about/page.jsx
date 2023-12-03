@@ -15,7 +15,7 @@ export default function About() {
               <h2 className="font-semibold text-xl text-[#ffc107]">What made me choose this theme/API</h2>
               <p className="mt-5">
                 The main reason I chose to do this project on the theme of Star Wars and its API is because this is one of my favorite franchises.
-                Ever since I was young, I've had a particular fondness for the themes and lore presented in the films and animated series, so I thought it would be good to revisit some of this particular taste of mine and associate it with an academic project like this one.
+                Ever since I was young, I&apos;ve had a particular fondness for the themes and lore presented in the films and animated series, so I thought it would be good to revisit some of this particular taste of mine and associate it with an academic project like this one.
               </p>
 
               <h2 className="font-semibold text-xl text-[#ffc107] mt-12">Functionalities</h2>
