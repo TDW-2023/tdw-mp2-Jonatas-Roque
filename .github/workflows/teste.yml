@@ -15,6 +15,7 @@ jobs:
         uses: actions/checkout@v2
 
       - name: Cache dependencies
+        id: cache_step
         uses: actions/cache@v2
         with:
           path: |
@@ -29,8 +30,8 @@ jobs:
           node-version: 18
 
       - name: Install
+        if: steps.cache_step.outputs.cache-hit != 'true'
         run: npm install
-        if: success()
 
       - name: Lint
         run: npm run lint
