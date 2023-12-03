@@ -33,7 +33,10 @@ export default function CharactersPage() {
   const dispatch = useDispatch();
   const [page, setPage] = useState(1);
 
-  //document.title = "Characters";
+  
+  if (typeof document !== 'undefined') {
+    document.title = "Characters";
+  }
 
   const { data: characters, error, isLoading } = useGetAllCharactersQuery(page);
 
