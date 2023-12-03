@@ -1,38 +1,33 @@
+import Link from "next/link";
+
 export default function Footer() {
   return (
-    <footer className="bg-[#1a1a1a] text-center bottom-0 lg:text-left">
-      <div className="container p-6">
-        <div className="grid md:grid-cols-2 lg:grid-cols-2 text-center mx-auto">
-          <div className="mb-6">
-            <h5 className="mb-2.5 font-bold uppercase text-neutral-800 dark:text-neutral-200">
-              Links
-            </h5>
+    <footer className="bg-[#1e1e1e] text-center bottom-0">
+      <div className=" text-white">
+        <div className="text-center mx-auto flex ">
+          <div className="font-bold text-2xl py-5 bg-[#181818] h-full w-[20%]">Pages:</div>
 
-            <ul className="mb-0 list-none">
+            <div className="w-[80%] items-center my-auto">
+              <ul className="mb-0 list-none flex justify-evenly">
               <li>
-                <a className="text-neutral-800 dark:text-neutral-200">Link 1</a>
+                <Link href={"/"} className="">Homepage</Link>
               </li>
               <li>
-                <a className="text-neutral-800 dark:text-neutral-200">Link 2</a>
+                <Link href={"/characters"} className="">Characters</Link>
+              </li>
+              <li>
+                <Link href={"/ships"} className="">Ships</Link>
+              </li>
+              <li>
+                <Link href={"/planets"} className="">Planets</Link>
+              </li>
+              <li>
+                <Link href={"/about"} className="">About</Link>
               </li>
             </ul>
-          </div>
-
-          <div className="mb-6">
-            <h5 className="mb-2.5 font-bold uppercase text-neutral-800 dark:text-neutral-200">
-              Links
-            </h5>
-
-            <ul className="mb-0 list-none">
-              <li>
-                <a className="text-neutral-800 dark:text-neutral-200">Link 1</a>
-              </li>
-              <li>
-                <a className="text-neutral-800 dark:text-neutral-200">Link 2</a>
-              </li>
-            </ul>
-          </div>
-        </div>
+            </div>
+            
+      </div>
       </div>
 
       <div className="bg-neutral-200 p-4 text-center text-neutral-700 dark:bg-neutral-700 dark:text-neutral-200">
