@@ -1,14 +1,11 @@
-import React from 'react'
-import { useDispatch } from 'react-redux'
-import { addBounty } from '../Redux/bountySlice'
+import React from "react";
+import { useDispatch } from "react-redux";
+import { addBounty } from "../Redux/bountySlice";
 
 const ButtonTest = () => {
+  const dispatch = useDispatch();
 
-    const dispatch = useDispatch()
+  return <div onClick={() => dispatch(addBounty("OLA"))}>ButtonTest</div>;
+};
 
-  return (
-    <div onClick={() => dispatch(addBounty('OLA'))}>ButtonTest</div>
-  )
-}
-
-export default ButtonTest
+export default ButtonTest;

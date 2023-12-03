@@ -49,12 +49,12 @@ body {
 
 main {
   background:
-    linear-gradient(rgba(0, 0, 0, 5) 0%, rgba(0, 0, 0, 0) 100%),
-    linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%)
-      /* , url("../public/imgs/darthvaderbg.jpg") no-repeat */;
+    linear-gradient(rgba(0, 0, 0, 0.9) 0%, rgba(0, 0, 0, 0) 100%),
+    linear-gradient(rgba(0, 0, 0, 0) 0%, rgba(0, 0, 0, 0.7) 100%),
+    url("../public/imgs/deathstar.png") no-repeat;
   background-position: top;
   background-size: contain;
-  background: scaleX(-1);
-  height: 100vh;
-  transform: scaleX(-1);
+  height: 89vh;
+
+  /* transform: scaleX(-1); */
 }
