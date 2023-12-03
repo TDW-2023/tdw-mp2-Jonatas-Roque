@@ -6,6 +6,11 @@ import { TbApi } from "react-icons/tb";
 import { FaGithub } from "react-icons/fa";
 
 export default function About() {
+
+  if (typeof document !== 'undefined') {
+    document.title = 'About';
+  }
+
   return (
     <main >
     <div className="mx-auto w-[1050px]">
