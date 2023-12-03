@@ -1,3 +1,5 @@
+"use client";
+
 import Image from "next/image";
 import { SiTailwindcss } from "react-icons/si";
 import { SiNextdotjs } from "react-icons/si";
@@ -5,7 +7,13 @@ import { TbBrandRedux } from "react-icons/tb";
 import { TbApi } from "react-icons/tb";
 import { FaGithub } from "react-icons/fa";
 
+
 export default function About() {
+
+  if (typeof document !== 'undefined') {
+    document.title = 'About';
+  }
+
   return (
     <main >
     <div className="mx-auto w-[1050px]">
@@ -43,7 +51,7 @@ export default function About() {
 
 
           <div className="h-full bg-[#313131] opacity-95">
-            <Image src={"/imgs/jonatasr.png"} width={420} height={330}/>
+            <Image src={"/imgs/jonatasr.png"} width={420} height={330} alt="Jónatas Roque" loading="lazy"/>
             <div className="w-full text-center text-white font-semibold bg-[#181818]">
                Jónatas Roque
             </div>
