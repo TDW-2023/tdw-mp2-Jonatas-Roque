@@ -5,7 +5,7 @@ import Link from "next/link";
 
 export default function Hero() {
 
-  document.title = 'Star Wars app';
+  //document.title = 'Star Wars app';
 
   return (
     <main className="-z-10 h-[89vh] my-auto">
