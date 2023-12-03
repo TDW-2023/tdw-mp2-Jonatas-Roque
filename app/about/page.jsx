@@ -44,7 +44,7 @@ export default function About() {
 
           <div className="h-full bg-[#313131] opacity-95">
             <Image src={"/imgs/jonatasr.png"} width={420} height={330}/>
-            <div className="w-full text-center text-black font-semibold bg-[#ffc107]">
+            <div className="w-full text-center text-white font-semibold bg-[#181818]">
                Jónatas Roque
             </div>
            
